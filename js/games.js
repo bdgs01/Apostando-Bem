@@ -1,4 +1,4 @@
-// games.js - Gerenciamento de jogos
+// games.js - Gerenciamento de jogos - CORRIGIDO
 
 const Games = {
     currentGames: [
@@ -45,33 +45,82 @@ const Games = {
             isLive: false,
             apostas: 64,
             impacto: 4120
+        },
+        {
+            id: 5,
+            homeTeam: { name: 'Santos', logo: '⚪⚫' },
+            awayTeam: { name: 'Botafogo', logo: '⚫⚪' },
+            date: '2025-11-19',
+            time: '21:00',
+            competition: 'Brasileirão Série A',
+            isLive: false,
+            apostas: 52,
+            impacto: 3280
+        },
+        {
+            id: 6,
+            homeTeam: { name: 'Fluminense', logo: '🟢🔴⚪' },
+            awayTeam: { name: 'Vasco', logo: '⚫⚪' },
+            date: '2025-11-19',
+            time: '19:30',
+            competition: 'Brasileirão Série A',
+            isLive: false,
+            apostas: 41,
+            impacto: 2590
         }
     ],
 
     // Load games into the page
     loadGames() {
         const gamesGrid = document.getElementById('gamesGrid');
-        if (!gamesGrid) return;
+        
+        if (!gamesGrid) {
+            console.error('❌ Elemento gamesGrid não encontrado no DOM');
+            return;
+        }
 
-        gamesGrid.innerHTML = this.currentGames.map(game => this.createGameCard(game)).join('');
+        console.log('✅ Carregando jogos...', this.currentGames.length, 'jogos disponíveis');
 
-        // Add event listeners
+        // Clear existing content
+        gamesGrid.innerHTML = '';
+
+        // Add games
+        this.currentGames.forEach(game => {
+            const gameCard = this.createGameCard(game);
+            gamesGrid.innerHTML += gameCard;
+        });
+
+        console.log('✅ Jogos carregados com sucesso!');
+
+        // Setup event listeners AFTER adding to DOM
+        this.setupGameListeners();
+    },
+
+    // Setup event listeners for game cards
+    setupGameListeners() {
+        // Game card clicks
         document.querySelectorAll('.game-card').forEach(card => {
             card.addEventListener('click', (e) => {
-                if (!e.target.classList.contains('bet-button')) {
+                // Don't trigger if clicking the bet button
+                if (!e.target.classList.contains('bet-button') && 
+                    !e.target.closest('.bet-button')) {
                     const gameId = parseInt(card.dataset.gameId);
                     this.showGameDetails(gameId);
                 }
             });
         });
 
+        // Bet button clicks
         document.querySelectorAll('.bet-button').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.stopPropagation();
                 const gameId = parseInt(e.target.closest('.game-card').dataset.gameId);
+                console.log('🎯 Abrindo modal de aposta para jogo:', gameId);
                 Betting.openBettingModal(gameId);
             });
         });
+
+        console.log('✅ Event listeners configurados');
     },
 
     // Create game card HTML
@@ -125,6 +174,7 @@ const Games = {
         const game = this.currentGames.find(g => g.id === gameId);
         if (!game) return;
 
+        console.log('📊 Detalhes do jogo:', game);
         // For now, just open betting modal
         Betting.openBettingModal(gameId);
     },
@@ -132,5 +182,16 @@ const Games = {
     // Get game by ID
     getGame(gameId) {
         return this.currentGames.find(g => g.id === gameId);
+    },
+
+    // Update game stats (pode ser usado depois para atualizar em tempo real)
+    updateGameStats(gameId, apostas, impacto) {
+        const game = this.currentGames.find(g => g.id === gameId);
+        if (game) {
+            game.apostas = apostas;
+            game.impacto = impacto;
+            // Recarregar apenas este card
+            this.loadGames();
+        }
     }
 };
