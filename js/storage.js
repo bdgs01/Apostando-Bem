@@ -1,7 +1,6 @@
 // storage.js - Gerenciamento de localStorage
 
 const Storage = {
-    // Keys
     KEYS: {
         USER_XP: 'apostandoBem_userXP',
         USER_LEVEL: 'apostandoBem_userLevel',
@@ -9,18 +8,15 @@ const Storage = {
         RANKING: 'apostandoBem_ranking'
     },
 
-    // Get XP
     getXP() {
         return parseInt(localStorage.getItem(this.KEYS.USER_XP)) || 0;
     },
 
-    // Set XP
     setXP(xp) {
         localStorage.setItem(this.KEYS.USER_XP, xp);
         this.updateLevel(xp);
     },
 
-    // Add XP
     addXP(amount) {
         const currentXP = this.getXP();
         const newXP = currentXP + amount;
@@ -28,12 +24,10 @@ const Storage = {
         return newXP;
     },
 
-    // Get Level
     getLevel() {
         return localStorage.getItem(this.KEYS.USER_LEVEL) || 'BRONZE';
     },
 
-    // Update Level based on XP
     updateLevel(xp) {
         let level = 'BRONZE';
         if (xp >= 3000) level = 'PLATINA';
@@ -44,13 +38,11 @@ const Storage = {
         return level;
     },
 
-    // Get User Bets
     getBets() {
         const bets = localStorage.getItem(this.KEYS.USER_BETS);
         return bets ? JSON.parse(bets) : [];
     },
 
-    // Add Bet
     addBet(bet) {
         const bets = this.getBets();
         bet.id = Date.now();
@@ -60,14 +52,12 @@ const Storage = {
         return bet;
     },
 
-    // Get Ranking (fake data for demo)
     getRanking() {
         const ranking = localStorage.getItem(this.KEYS.RANKING);
         if (ranking) {
             return JSON.parse(ranking);
         }
         
-        // Initialize with fake data
         const fakeRanking = [
             { name: 'Você', xp: this.getXP(), level: this.getLevel(), impact: 0 },
             { name: 'Maria Silva', xp: 4500, level: 'PLATINA', impact: 15000 },
@@ -85,7 +75,6 @@ const Storage = {
         return fakeRanking;
     },
 
-    // Update user in ranking
     updateRanking() {
         const ranking = this.getRanking();
         const userIndex = ranking.findIndex(u => u.name === 'Você');
@@ -93,20 +82,18 @@ const Storage = {
         if (userIndex !== -1) {
             ranking[userIndex].xp = this.getXP();
             ranking[userIndex].level = this.getLevel();
-            
-            // Sort by XP
             ranking.sort((a, b) => b.xp - a.xp);
-            
             localStorage.setItem(this.KEYS.RANKING, JSON.stringify(ranking));
         }
         
         return ranking;
     },
 
-    // Clear all data
     clearAll() {
         Object.values(this.KEYS).forEach(key => {
             localStorage.removeItem(key);
         });
     }
 };
+
+console.log('✅ storage.js carregado');
