@@ -950,3 +950,82 @@ body {
 .mb-3 { margin-bottom: var(--spacing-md); }
 .mb-4 { margin-bottom: var(--spacing-lg); }
 .mb-5 { margin-bottom: var(--spacing-xl); }
+
+/* ===================================
+   CONTRAST FIXES (WCAG AA Compliance)
+   =================================== */
+
+/* Ensure text contrast on active/selected states */
+.ods-card-selectable.selected .ods-card-title,
+.ods-card-selectable.selected .ods-card-description {
+    color: var(--text-primary);
+}
+
+.institution-item.selected .institution-info h4 {
+    color: var(--bg-dark);
+    font-weight: 700;
+}
+
+.institution-item.selected .institution-website {
+    color: var(--bg-dark);
+}
+
+/* Tab buttons contrast */
+.tab-button.active {
+    color: var(--bg-dark) !important;
+}
+
+/* Bet type button contrast */
+.bet-type-btn.active {
+    color: var(--bg-dark);
+}
+
+.bet-type-btn.active .bet-type-icon,
+.bet-type-btn.active .bet-type-text,
+.bet-type-btn.active .bet-type-xp {
+    color: var(--bg-dark);
+}
+
+/* Level badge - ensure readability */
+.level-badge {
+    color: var(--bg-dark);
+    text-shadow: none;
+}
+
+/* Game competition badge */
+.game-competition-badge {
+    color: var(--bg-dark);
+}
+
+/* All buttons with gradient background */
+.cta-button,
+.btn-confirm-bet,
+.btn-generate,
+.btn-success-close,
+.xp-badge-large {
+    color: var(--bg-dark);
+}
+
+/* Copy button */
+.btn-copy {
+    color: var(--bg-dark);
+}
+
+/* Ensure minimum 4.5:1 contrast ratio for normal text */
+.text-secondary {
+    color: #b0b8c8;
+}
+
+/* Link colors with sufficient contrast */
+a {
+    color: var(--primary-color);
+}
+
+a:hover {
+    color: var(--primary-light);
+}
+
+/* Success text on primary background */
+.success-ods {
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
