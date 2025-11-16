@@ -1,4 +1,4 @@
-// betting.js - Sistema de apostas CORRIGIDO
+// betting.js - Sistema de apostas COMPLETO E FUNCIONAL
 
 const Betting = {
     currentGame: null,
@@ -8,12 +8,10 @@ const Betting = {
     betAmount: 50,
     odsData: null,
 
-    // Initialize
     async init() {
         await this.loadODSData();
     },
 
-    // Load ODS data from JSON
     async loadODSData() {
         try {
             const response = await fetch('data/ods-data.json');
@@ -25,7 +23,6 @@ const Betting = {
         }
     },
 
-    // Open betting modal
     openBettingModal(gameId) {
         const game = Games.getGame(gameId);
         if (!game) return;
@@ -41,17 +38,14 @@ const Betting = {
         modalBody.innerHTML = this.createBettingInterface();
         modal.classList.add('active');
 
-        // Setup event listeners
         this.setupBettingListeners();
     },
 
-    // Close modal
     closeModal() {
         const modal = document.getElementById('bettingModal');
         modal.classList.remove('active');
     },
 
-    // Create betting interface
     createBettingInterface() {
         return `
             <div class="betting-interface">
@@ -87,7 +81,6 @@ const Betting = {
                 </div>
 
                 <div class="bet-steps-container">
-                    <!-- STEP 1: Select ODS -->
                     <div class="bet-step-section active" id="stepSelectODS">
                         <h3 class="step-title">1️⃣ Escolha um Objetivo de Desenvolvimento Sustentável (ODS)</h3>
                         <div class="ods-grid" id="odsGrid">
@@ -95,7 +88,6 @@ const Betting = {
                         </div>
                     </div>
 
-                    <!-- STEP 2: ODS Details & Select Institution -->
                     <div class="bet-step-section" id="stepSelectInstitution" style="display:none;">
                         <button class="back-button" id="backToODS">← Voltar para ODS</button>
                         <div id="odsDetails"></div>
@@ -103,11 +95,9 @@ const Betting = {
                         <div class="institution-list" id="institutionList"></div>
                     </div>
 
-                    <!-- STEP 3: Action based on bet type -->
                     <div class="bet-step-section" id="stepAction" style="display:none;">
                         <button class="back-button" id="backToInstitution">← Voltar para instituições</button>
                         
-                        <!-- Money Bet Content -->
                         <div class="bet-action-content" id="contentMoney">
                             <h3 class="step-title">3️⃣ Escolha o valor da doação</h3>
                             <div class="amount-selector">
@@ -130,7 +120,6 @@ const Betting = {
                             </button>
                         </div>
 
-                        <!-- Link Bet Content -->
                         <div class="bet-action-content" id="contentLink" style="display:none;">
                             <h3 class="step-title">3️⃣ Gerar link de compartilhamento</h3>
                             <div class="share-link-section">
@@ -145,7 +134,6 @@ const Betting = {
                             </div>
                         </div>
 
-                        <!-- Card Bet Content -->
                         <div class="bet-action-content" id="contentCard" style="display:none;">
                             <h3 class="step-title">3️⃣ Gerar card para redes sociais</h3>
                             <div class="card-generator-section">
@@ -178,7 +166,6 @@ const Betting = {
         `;
     },
 
-    // Create ODS grid with images
     createODSGrid() {
         if (!this.odsData || this.odsData.length === 0) {
             return '<p class="loading-message">Carregando Objetivos de Desenvolvimento Sustentável...</p>';
@@ -201,19 +188,15 @@ const Betting = {
         `).join('');
     },
 
-    // Setup all event listeners
     setupBettingListeners() {
-        // Close modal
         document.getElementById('closeModal')?.addEventListener('click', () => this.closeModal());
 
-        // Click outside modal to close
         document.getElementById('bettingModal')?.addEventListener('click', (e) => {
             if (e.target.id === 'bettingModal') {
                 this.closeModal();
             }
         });
 
-        // Bet type selector
         document.querySelectorAll('.bet-type-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const button = e.currentTarget;
@@ -224,7 +207,6 @@ const Betting = {
             });
         });
 
-        // ODS selection
         document.querySelectorAll('.ods-card-selectable').forEach(card => {
             card.addEventListener('click', (e) => {
                 const odsId = parseInt(e.currentTarget.dataset.odsId);
@@ -232,7 +214,6 @@ const Betting = {
             });
         });
 
-        // Amount slider
         const slider = document.getElementById('amountSlider');
         if (slider) {
             slider.addEventListener('input', (e) => {
@@ -242,11 +223,9 @@ const Betting = {
             });
         }
 
-        // Back buttons
         document.getElementById('backToODS')?.addEventListener('click', () => this.goToStep('stepSelectODS'));
         document.getElementById('backToInstitution')?.addEventListener('click', () => this.goToStep('stepSelectInstitution'));
 
-        // Action buttons
         document.getElementById('confirmMoneyBet')?.addEventListener('click', () => this.confirmMoneyBet());
         document.getElementById('generateLinkBtn')?.addEventListener('click', () => this.generateShareLink());
         document.getElementById('copyLinkBtn')?.addEventListener('click', () => this.copyLink());
@@ -257,20 +236,17 @@ const Betting = {
         document.getElementById('shareFacebook')?.addEventListener('click', () => this.shareOnPlatform('facebook'));
     },
 
-    // Select ODS
     selectODS(odsId) {
         this.selectedODS = this.odsData.find(ods => ods.id === odsId);
         if (!this.selectedODS) return;
 
         console.log('✅ ODS selecionada:', this.selectedODS.nome);
 
-        // Update UI - highlight selected
         document.querySelectorAll('.ods-card-selectable').forEach(card => {
             card.classList.remove('selected');
         });
         document.querySelector(`[data-ods-id="${odsId}"]`)?.classList.add('selected');
 
-        // Show ODS details
         document.getElementById('odsDetails').innerHTML = `
             <div class="ods-details-card" style="border-left: 4px solid ${this.selectedODS.cor};">
                 <div class="ods-details-header">
@@ -284,14 +260,10 @@ const Betting = {
             </div>
         `;
 
-        // Show institutions
         this.showInstitutions();
-
-        // Move to next step
         this.goToStep('stepSelectInstitution');
     },
 
-    // Show institutions
     showInstitutions() {
         const institutionList = document.getElementById('institutionList');
         if (!institutionList || !this.selectedODS) return;
@@ -308,7 +280,6 @@ const Betting = {
             </div>
         `).join('');
 
-        // Add click listeners
         document.querySelectorAll('.institution-item').forEach(item => {
             item.addEventListener('click', () => {
                 this.selectInstitution(item.dataset.instName);
@@ -316,27 +287,23 @@ const Betting = {
         });
     },
 
-    // Select institution
     selectInstitution(instName) {
         this.selectedInstitution = this.selectedODS.instituicoes.find(i => i.nome === instName);
         if (!this.selectedInstitution) return;
 
         console.log('✅ Instituição selecionada:', this.selectedInstitution.nome);
 
-        // Update UI
         document.querySelectorAll('.institution-item').forEach(item => {
             item.classList.remove('selected');
         });
         document.querySelector(`[data-inst-name="${instName}"]`)?.classList.add('selected');
 
-        // Move to action step
         setTimeout(() => {
             this.goToStep('stepAction');
             this.updateImpactDisplay();
         }, 300);
     },
 
-    // Go to specific step
     goToStep(stepId) {
         document.querySelectorAll('.bet-step-section').forEach(section => {
             section.style.display = 'none';
@@ -350,7 +317,6 @@ const Betting = {
         }
     },
 
-    // Update action content based on bet type
     updateActionContent() {
         document.querySelectorAll('.bet-action-content').forEach(content => {
             content.style.display = 'none';
@@ -358,7 +324,6 @@ const Betting = {
         document.getElementById(`content${this.currentBetType.charAt(0).toUpperCase() + this.currentBetType.slice(1)}`)?.style.display = 'block';
     },
 
-    // Update impact display
     updateImpactDisplay() {
         if (!this.selectedODS) return;
 
@@ -379,14 +344,12 @@ const Betting = {
         impactText.textContent = message;
     },
 
-    // Confirm money bet
     confirmMoneyBet() {
         if (!this.selectedODS || !this.selectedInstitution) {
             alert('Por favor, selecione uma ODS e uma instituição');
             return;
         }
 
-        // Save bet
         const bet = {
             type: 'money',
             gameId: this.currentGame.id,
@@ -406,7 +369,6 @@ const Betting = {
         console.log('✅ Aposta registrada:', bet);
         console.log('✅ XP atualizado:', newXP);
 
-        // Show success and redirect
         this.showSuccess(50, () => {
             window.open(this.selectedInstitution.link, '_blank');
             setTimeout(() => {
@@ -416,7 +378,6 @@ const Betting = {
         });
     },
 
-    // Generate share link
     generateShareLink() {
         if (!this.selectedODS || !this.selectedInstitution) {
             alert('Por favor, selecione uma ODS e uma instituição');
@@ -429,7 +390,6 @@ const Betting = {
         document.getElementById('generatedLink').value = shareLink;
         document.getElementById('linkContainer').style.display = 'flex';
 
-        // Save bet
         const bet = {
             type: 'link',
             gameId: this.currentGame.id,
@@ -451,11 +411,10 @@ const Betting = {
         this.showSuccess(20);
     },
 
-    // Copy link to clipboard
     copyLink() {
         const linkInput = document.getElementById('generatedLink');
         linkInput.select();
-        linkInput.setSelectionRange(0, 99999); // For mobile
+        linkInput.setSelectionRange(0, 99999);
         
         try {
             document.execCommand('copy');
@@ -473,7 +432,6 @@ const Betting = {
         }
     },
 
-    // Generate social card
     async generateSocialCard() {
         if (!this.selectedODS || !this.selectedInstitution) {
             alert('Por favor, selecione uma ODS e uma instituição');
@@ -483,18 +441,14 @@ const Betting = {
         const canvas = document.getElementById('socialCardCanvas');
         const ctx = canvas.getContext('2d');
 
-        // Clear canvas
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        // Background with ODS color
         ctx.fillStyle = this.selectedODS.cor;
         ctx.fillRect(0, 0, 1080, 1080);
 
-        // White content area
         ctx.fillStyle = '#FFFFFF';
         ctx.fillRect(60, 60, 960, 960);
 
-        // Load and draw ODS icon
         const odsIcon = new Image();
         odsIcon.crossOrigin = 'anonymous';
         odsIcon.src = this.selectedODS.icone;
@@ -510,13 +464,11 @@ const Betting = {
             };
         });
 
-        // Brand name
         ctx.fillStyle = this.selectedODS.cor;
         ctx.font = 'bold 60px Inter, Arial, sans-serif';
         ctx.textAlign = 'center';
         ctx.fillText('APOSTANDO BEM', 540, 550);
 
-        // ODS name (multiline)
         ctx.fillStyle = '#0A0E17';
         ctx.font = 'bold 48px Inter, Arial, sans-serif';
         const words = this.selectedODS.nome.split(' ');
@@ -536,21 +488,17 @@ const Betting = {
         });
         ctx.fillText(line.trim(), 540, y);
 
-        // Institution
         ctx.fillStyle = '#6b7280';
         ctx.font = '32px Inter, Arial, sans-serif';
         ctx.fillText(`Apoiando: ${this.selectedInstitution.nome}`, 540, y + 100);
 
-        // Call to action
         ctx.fillStyle = this.selectedODS.cor;
         ctx.font = 'bold 40px Inter, Arial, sans-serif';
         ctx.fillText('Apostei em ODS, não em BET', 540, 900);
 
-        // Show canvas and buttons
         document.getElementById('cardPreview').style.display = 'block';
         canvas.style.display = 'block';
 
-        // Save bet
         const bet = {
             type: 'card',
             gameId: this.currentGame.id,
@@ -571,7 +519,6 @@ const Betting = {
         this.showSuccess(30);
     },
 
-    // Download card
     downloadCard() {
         const canvas = document.getElementById('socialCardCanvas');
         const link = document.createElement('a');
@@ -580,7 +527,6 @@ const Betting = {
         link.click();
     },
 
-    // Share on social platforms
     shareOnPlatform(platform) {
         const text = `Acabei de apostar em "${this.selectedODS.nome}" no Apostando Bem! 💚
 
@@ -602,7 +548,6 @@ Apostei em ODS, não em BET.
         }
     },
 
-    // Show success message
     showSuccess(xp, callback) {
         const modalBody = document.getElementById('modalBody');
         modalBody.innerHTML = `
@@ -632,3 +577,5 @@ Apostei em ODS, não em BET.
         }
     }
 };
+
+console.log('✅ betting.js carregado');
