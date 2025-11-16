@@ -1,1 +1,327 @@
-
+{
+  "ods": [
+    {
+      "id": 1,
+      "nome": "Erradicação da Pobreza",
+      "descricao": "Mais de 700 milhões de pessoas no mundo ainda vivem na pobreza extrema. Quando você aposta nesta ODS, apoia iniciativas que ajudam pessoas a reconstruir sua trajetória.",
+      "descricaoCompleta": "Cerca de 700 milhões de pessoas no mundo ainda vivem na pobreza extrema — e isso se reflete no Brasil quando vemos famílias sem acesso ao básico. A pobreza não é só falta de renda, é falta de oportunidade, de mobilidade e de dignidade. Quando você aposta nesta ODS, apoia iniciativas que ajudam pessoas a reconstruir sua trajetória: redes de apoio, capacitação, moradia, geração de renda. Pequenas ações levantam comunidades inteiras.",
+      "cor": "#E5243B",
+      "icone": "https://brasil.un.org/profiles/undg_country/themes/custom/undg/images/SDGs/pt-br/SDG-1.svg",
+      "link": "https://brasil.un.org/pt-br/sdgs/1",
+      "instituicoes": [
+        {"nome": "Ação da Cidadania", "link": "https://www.acaodacidadania.org.br"},
+        {"nome": "Central Única das Favelas (CUFA)", "link": "https://www.cufa.org.br"},
+        {"nome": "Banco de Alimentos", "link": "https://www.bancodealimentos.org.br"}
+      ],
+      "impacto": {
+        "50": "Cesta básica para 1 família por 15 dias",
+        "100": "Apoio emergencial para 3 famílias",
+        "500": "Suporte mensal para 10 pessoas em vulnerabilidade"
+      }
+    },
+    {
+      "id": 2,
+      "nome": "Fome Zero e Agricultura Sustentável",
+      "descricao": "Cerca de 820 milhões de pessoas enfrentam fome. Apostar nessa ODS é apoiar quem leva comida saudável à mesa: hortas urbanas, agricultura familiar, merenda de qualidade.",
+      "descricaoCompleta": "Cerca de 820 milhões de pessoas no mundo ainda enfrentam fome, e o Brasil voltou ao mapa da fome há poucos anos. Fome significa menos aprendizado, menos energia, menos futuro. Apostar nessa ODS é apoiar quem leva comida saudável à mesa: hortas urbanas, agricultura familiar, merenda de qualidade. Uma refeição muda um dia; alimentação contínua muda destinos.",
+      "cor": "#DDA63A",
+      "icone": "https://brasil.un.org/profiles/undg_country/themes/custom/undg/images/SDGs/pt-br/SDG-2.svg",
+      "link": "https://brasil.un.org/pt-br/sdgs/2",
+      "instituicoes": [
+        {"nome": "Banco de Alimentos", "link": "https://www.bancodealimentos.org.br"},
+        {"nome": "Slow Food Brasil", "link": "https://www.slowfoodbrasil.com"},
+        {"nome": "Gastromotiva", "link": "https://gastromotiva.org"}
+      ],
+      "impacto": {
+        "50": "150 refeições servidas em comunidades",
+        "100": "Suporte para 1 horta comunitária por 1 mês",
+        "500": "1.500 refeições + capacitação culinária"
+      }
+    },
+    {
+      "id": 3,
+      "nome": "Saúde e Bem-Estar",
+      "descricao": "Doenças evitáveis ainda tiram vidas. Apoiar esta ODS fortalece campanhas de prevenção, saúde mental, vacinação e programas comunitários.",
+      "descricaoCompleta": "Doenças evitáveis ainda tiram vidas, e milhões não têm acesso a cuidados básicos. Saúde não é luxo — é ponto de partida para qualquer futuro. Apoiar esta ODS fortalece campanhas de prevenção, saúde mental, vacinação e programas comunitários. Cada pessoa saudável fortalece toda a sociedade.",
+      "cor": "#4C9F38",
+      "icone": "https://brasil.un.org/profiles/undg_country/themes/custom/undg/images/SDGs/pt-br/SDG-3.svg",
+      "link": "https://brasil.un.org/pt-br/sdgs/3",
+      "instituicoes": [
+        {"nome": "Médicos Sem Fronteiras", "link": "https://www.msf.org.br"},
+        {"nome": "Instituto Lado a Lado pela Vida", "link": "https://www.ladoaladopelavida.org.br"},
+        {"nome": "CVV - Centro de Valorização da Vida", "link": "https://www.cvv.org.br"}
+      ],
+      "impacto": {
+        "50": "5 consultas médicas em comunidades carentes",
+        "100": "Apoio a 20 pessoas em acompanhamento psicológico",
+        "500": "Campanha de vacinação para 200 crianças"
+      }
+    },
+    {
+      "id": 4,
+      "nome": "Educação de Qualidade",
+      "descricao": "Mais de 260 milhões de jovens no mundo estão fora da escola. Ao apostar nessa ODS, você ajuda a garantir acesso, permanência e inovação na educação.",
+      "descricaoCompleta": "Mais de 260 milhões de jovens no mundo estão fora da escola. Sem estudo, os caminhos ficam mais estreitos. Ao apostar nessa ODS, você ajuda a garantir acesso, permanência e inovação na educação. Educação muda escolhas, e escolhas mudam vidas.",
+      "cor": "#C5192D",
+      "icone": "https://brasil.un.org/profiles/undg_country/themes/custom/undg/images/SDGs/pt-br/SDG-4.svg",
+      "link": "https://brasil.un.org/pt-br/sdgs/4",
+      "instituicoes": [
+        {"nome": "Fundação Lemann", "link": "https://fundacaolemann.org.br"},
+        {"nome": "Todos Pela Educação", "link": "https://todospelaeducacao.org.br"},
+        {"nome": "Instituto Ayrton Senna", "link": "https://institutoayrtonsenna.org.br"}
+      ],
+      "impacto": {
+        "50": "Material escolar para 10 crianças",
+        "100": "Curso profissionalizante para 5 jovens",
+        "500": "Bolsas de estudo para 3 estudantes por 1 ano"
+      }
+    },
+    {
+      "id": 5,
+      "nome": "Igualdade de Gênero",
+      "descricao": "Mulheres ainda ganham menos, sofrem mais violência e têm menos acesso a posições de liderança. Apostar nessa ODS é fortalecer ações que promovem segurança, autonomia financeira e participação feminina.",
+      "descricaoCompleta": "Mulheres ainda ganham menos, sofrem mais violência e têm menos acesso a posições de liderança. O mundo perde quando metade dele é limitada. Apostar nessa ODS é fortalecer ações que promovem segurança, autonomia financeira e participação feminina. Igualdade não é tendência — é base de uma sociedade justa.",
+      "cor": "#FF3A21",
+      "icone": "https://brasil.un.org/profiles/undg_country/themes/custom/undg/images/SDGs/pt-br/SDG-5.svg",
+      "link": "https://brasil.un.org/pt-br/sdgs/5",
+      "instituicoes": [
+        {"nome": "Think Olga", "link": "https://thinkolga.com"},
+        {"nome": "Instituto Maria da Penha", "link": "https://www.institutomariadapenha.org.br"},
+        {"nome": "Elas no Congresso", "link": "https://elasnocongresso.com.br"}
+      ],
+      "impacto": {
+        "50": "Apoio jurídico para 2 mulheres em situação de violência",
+        "100": "Workshop de empoderamento para 20 mulheres",
+        "500": "Capacitação profissional para 15 mulheres"
+      }
+    },
+    {
+      "id": 6,
+      "nome": "Água Potável e Saneamento",
+      "descricao": "Mais de 2 bilhões de pessoas vivem sem água tratada. Quando você aposta aqui, apoia projetos de abastecimento, higiene, tratamento e preservação de recursos hídricos.",
+      "descricaoCompleta": "Mais de 2 bilhões de pessoas vivem sem água tratada. No Brasil, metade da população ainda não tem acesso a saneamento completo. Quando você aposta aqui, apoia projetos de abastecimento, higiene, tratamento e preservação de recursos hídricos. Água limpa salva vidas todos os dias.",
+      "cor": "#26BDE2",
+      "icone": "https://brasil.un.org/profiles/undg_country/themes/custom/undg/images/SDGs/pt-br/SDG-6.svg",
+      "link": "https://brasil.un.org/pt-br/sdgs/6",
+      "instituicoes": [
+        {"nome": "Trata Brasil", "link": "http://www.tratabrasil.org.br"},
+        {"nome": "WaterAid Brasil", "link": "https://www.wateraid.org/br"},
+        {"nome": "SOS Mata Atlântica", "link": "https://www.sosma.org.br"}
+      ],
+      "impacto": {
+        "50": "Filtros de água para 5 famílias",
+        "100": "Sistema de captação de água da chuva para 1 escola",
+        "500": "Poço artesiano em comunidade rural"
+      }
+    },
+    {
+      "id": 7,
+      "nome": "Energia Limpa e Acessível",
+      "descricao": "Cerca de 675 milhões de pessoas ainda vivem sem eletricidade. Apoiar esta ODS impulsiona fontes renováveis, energia solar, eficiência e acesso a tecnologias sustentáveis.",
+      "descricaoCompleta": "Cerca de 675 milhões de pessoas ainda vivem sem eletricidade. Energia muda tudo: educação, segurança, economia. Apoiar esta ODS impulsiona fontes renováveis, energia solar, eficiência e acesso a tecnologias sustentáveis. Energia limpa é energia para o futuro.",
+      "cor": "#FCC30B",
+      "icone": "https://brasil.un.org/profiles/undg_country/themes/custom/undg/images/SDGs/pt-br/SDG-7.svg",
+      "link": "https://brasil.un.org/pt-br/sdgs/7",
+      "instituicoes": [
+        {"nome": "Instituto Clima e Sociedade", "link": "https://www.climaesociedade.org"},
+        {"nome": "Litro de Luz Brasil", "link": "https://www.litrodeluz.com"},
+        {"nome": "Instituto Internacional Arayara", "link": "https://arayara.org"}
+      ],
+      "impacto": {
+        "50": "Lâmpadas LED para 10 residências",
+        "100": "Kit de energia solar para 1 escola rural",
+        "500": "Eletrificação de 5 casas em área remota"
+      }
+    },
+    {
+      "id": 8,
+      "nome": "Trabalho Decente e Crescimento Econômico",
+      "descricao": "Milhões trabalham muito e ganham pouco. Apostar nessa ODS é impulsionar emprego digno, empreendedorismo local e oportunidades reais.",
+      "descricaoCompleta": "Milhões trabalham muito e ganham pouco. No Brasil, informalidade e baixa renda ainda travam sonhos. Apostar nessa ODS é impulsionar emprego digno, empreendedorismo local e oportunidades reais. Trabalho decente é o começo da virada.",
+      "cor": "#A21942",
+      "icone": "https://brasil.un.org/profiles/undg_country/themes/custom/undg/images/SDGs/pt-br/SDG-8.svg",
+      "link": "https://brasil.un.org/pt-br/sdgs/8",
+      "instituicoes": [
+        {"nome": "Instituto Aliança", "link": "https://institutoalianca.org.br"},
+        {"nome": "Artemisia", "link": "https://artemisia.org.br"},
+        {"nome": "Potencia Ventures", "link": "https://potenciaventures.com.br"}
+      ],
+      "impacto": {
+        "50": "Mentoria para 5 microempreendedores",
+        "100": "Curso de capacitação profissional para 10 pessoas",
+        "500": "Microcrédito para 3 pequenos negócios"
+      }
+    },
+    {
+      "id": 9,
+      "nome": "Indústria, Inovação e Infraestrutura",
+      "descricao": "Regiões inteiras ficam para trás por falta de tecnologia, conectividade e estrutura. Apoiar esta ODS significa apostar em inovação, mobilidade, ciência e acesso digital.",
+      "descricaoCompleta": "Regiões inteiras ficam para trás por falta de tecnologia, conectividade e estrutura. Apoiar esta ODS significa apostar em inovação, mobilidade, ciência e acesso digital. Infraestrutura forte cria futuro forte.",
+      "cor": "#FD6925",
+      "icone": "https://brasil.un.org/profiles/undg_country/themes/custom/undg/images/SDGs/pt-br/SDG-9.svg",
+      "link": "https://brasil.un.org/pt-br/sdgs/9",
+      "instituicoes": [
+        {"nome": "Instituto Tellus", "link": "https://institutotellus.org"},
+        {"nome": "Programaê!", "link": "https://programae.org.br"},
+        {"nome": "Reprograma", "link": "https://reprograma.com.br"}
+      ],
+      "impacto": {
+        "50": "Acesso à internet para 5 estudantes por 3 meses",
+        "100": "Curso de programação para 10 jovens",
+        "500": "Computadores para 1 escola pública"
+      }
+    },
+    {
+      "id": 10,
+      "nome": "Redução das Desigualdades",
+      "descricao": "As diferenças entre quem tem muito e quem tem pouco só aumentam. Ao apostar aqui, você fortalece projetos que ampliam inclusão, acessibilidade e justiça social.",
+      "descricaoCompleta": "As diferenças entre quem tem muito e quem tem pouco só aumentam — dentro e entre países. Ao apostar aqui, você fortalece projetos que ampliam inclusão, acessibilidade e justiça social. Diminuir desigualdade aumenta possibilidades para todos.",
+      "cor": "#DD1367",
+      "icone": "https://brasil.un.org/profiles/undg_country/themes/custom/undg/images/SDGs/pt-br/SDG-10.svg",
+      "link": "https://brasil.un.org/pt-br/sdgs/10",
+      "instituicoes": [
+        {"nome": "Redes da Maré", "link": "https://www.redesdamare.org.br"},
+        {"nome": "Instituto Rodrigo Mendes", "link": "https://institutorodigomendes.org.br"},
+        {"nome": "Educafro", "link": "https://www.educafro.org.br"}
+      ],
+      "impacto": {
+        "50": "Material adaptado para 5 pessoas com deficiência",
+        "100": "Curso preparatório para vestibular para 15 jovens de periferia",
+        "500": "Bolsas universitárias para 2 estudantes negros"
+      }
+    },
+    {
+      "id": 11,
+      "nome": "Cidades e Comunidades Sustentáveis",
+      "descricao": "Mais de 50% da população mundial vive em cidades, muitas delas desiguais, poluídas e inseguras. Apoiar essa ODS estimula mobilidade, moradia, cultura, espaços verdes e comunidades mais humanas.",
+      "descricaoCompleta": "Mais de 50% da população mundial vive em cidades, muitas delas desiguais, poluídas e inseguras. Apoiar essa ODS estimula mobilidade, moradia, cultura, espaços verdes e comunidades mais humanas. Cidades melhores criam vidas melhores.",
+      "cor": "#FD9D24",
+      "icone": "https://brasil.un.org/profiles/undg_country/themes/custom/undg/images/SDGs/pt-br/SDG-11.svg",
+      "link": "https://brasil.un.org/pt-br/sdgs/11",
+      "instituicoes": [
+        {"nome": "ITDP Brasil", "link": "https://www.itdp.org"},
+        {"nome": "LabCidade", "link": "http://www.labcidade.fau.usp.br"},
+        {"nome": "Minha Sampa", "link": "https://minhasampa.org.br"}
+      ],
+      "impacto": {
+        "50": "Plantio de 20 árvores em áreas urbanas",
+        "100": "Revitalização de 1 praça comunitária",
+        "500": "Projeto de mobilidade urbana para 1 bairro"
+      }
+    },
+    {
+      "id": 12,
+      "nome": "Consumo e Produção Responsáveis",
+      "descricao": "Se todos consumissem como os países mais ricos, seriam necessários vários planetas. Apostar nesta ODS é apoiar reciclagem, economia circular, escolhas conscientes e empresas sustentáveis.",
+      "descricaoCompleta": "Se todos consumissem como os países mais ricos, seriam necessários vários planetas. Apostar nesta ODS é apoiar reciclagem, economia circular, escolhas conscientes e empresas sustentáveis. Mudar hábitos muda o impacto.",
+      "cor": "#BF8B2E",
+      "icone": "https://brasil.un.org/profiles/undg_country/themes/custom/undg/images/SDGs/pt-br/SDG-12.svg",
+      "link": "https://brasil.un.org/pt-br/sdgs/12",
+      "instituicoes": [
+        {"nome": "Instituto Akatu", "link": "https://www.akatu.org.br"},
+        {"nome": "Menos 1 Lixo", "link": "https://www.menos1lixo.com.br"},
+        {"nome": "Movimento Plástico Transforma", "link": "https://www.plasticotransforma.com.br"}
+      ],
+      "impacto": {
+        "50": "Kits de consumo consciente para 10 famílias",
+        "100": "Oficina de reciclagem para 30 pessoas",
+        "500": "Ponto de coleta seletiva em 1 comunidade"
+      }
+    },
+    {
+      "id": 13,
+      "nome": "Ação Contra a Mudança Global do Clima",
+      "descricao": "Eventos extremos, calor recorde, enchentes e secas já fazem parte da nossa rotina. Apoiar essa ODS fortalece ações de mitigação, reflorestamento, mobilidade limpa e educação climática.",
+      "descricaoCompleta": "Eventos extremos, calor recorde, enchentes e secas já fazem parte da nossa rotina. Apoiar essa ODS fortalece ações de mitigação, reflorestamento, mobilidade limpa e educação climática. O clima muda — nós também podemos mudar.",
+      "cor": "#3F7E44",
+      "icone": "https://brasil.un.org/profiles/undg_country/themes/custom/undg/images/SDGs/pt-br/SDG-13.svg",
+      "link": "https://brasil.un.org/pt-br/sdgs/13",
+      "instituicoes": [
+        {"nome": "Observatório do Clima", "link": "https://www.oc.eco.br"},
+        {"nome": "350.org Brasil", "link": "https://350.org/pt-br"},
+        {"nome": "Instituto ClimaInfo", "link": "https://climainfo.org.br"}
+      ],
+      "impacto": {
+        "50": "Plantio de 50 mudas nativas",
+        "100": "Compensação de 1 tonelada de CO₂",
+        "500": "Reflorestamento de 1 hectare de área degradada"
+      }
+    },
+    {
+      "id": 14,
+      "nome": "Vida na Água",
+      "descricao": "Mais de 30% das espécies marinhas estão ameaçadas, e o plástico já domina oceanos. Ao apostar nessa ODS, você contribui para a preservação de mares, rios, pesca sustentável e limpeza de ecossistemas.",
+      "descricaoCompleta": "Mais de 30% das espécies marinhas estão ameaçadas, e o plástico já domina oceanos. Ao apostar nessa ODS, você contribui para a preservação de mares, rios, pesca sustentável e limpeza de ecossistemas. Sem oceanos saudáveis, não existe vida saudável.",
+      "cor": "#0A97D9",
+      "icone": "https://brasil.un.org/profiles/undg_country/themes/custom/undg/images/SDGs/pt-br/SDG-14.svg",
+      "link": "https://brasil.un.org/pt-br/sdgs/14",
+      "instituicoes": [
+        {"nome": "Instituto Mar Urbano", "link": "https://marurbano.org"},
+        {"nome": "Projeto Tamar", "link": "https://www.tamar.org.br"},
+        {"nome": "Oceana Brasil", "link": "https://brasil.oceana.org"}
+      ],
+      "impacto": {
+        "50": "Limpeza de 100m de praia",
+        "100": "Resgate e reabilitação de 5 animais marinhos",
+        "500": "Mutirão de limpeza oceânica com 50 voluntários"
+      }
+    },
+    {
+      "id": 15,
+      "nome": "Vida Terrestre",
+      "descricao": "O planeta perde florestas e espécies a uma velocidade sem precedentes. Apoiar esta ODS é proteger biomas, fauna, flora e comunidades tradicionais.",
+      "descricaoCompleta": "O planeta perde florestas e espécies a uma velocidade sem precedentes. Apoiar esta ODS é proteger biomas, fauna, flora e comunidades tradicionais. Natureza preservada é garantia de futuro.",
+      "cor": "#56C02B",
+      "icone": "https://brasil.un.org/profiles/undg_country/themes/custom/undg/images/SDGs/pt-br/SDG-15.svg",
+      "link": "https://brasil.un.org/pt-br/sdgs/15",
+      "instituicoes": [
+        {"nome": "WWF Brasil", "link": "https://www.wwf.org.br"},
+        {"nome": "Instituto Socioambiental (ISA)", "link": "https://www.socioambiental.org"},
+        {"nome": "SOS Amazônia", "link": "https://sosamazonia.org.br"}
+      ],
+      "impacto": {
+        "50": "Proteção de 10 hectares de floresta por 1 mês",
+        "100": "Resgate de 3 animais silvestres",
+        "500": "Conservação de 50 hectares de mata nativa"
+      }
+    },
+    {
+      "id": 16,
+      "nome": "Paz, Justiça e Instituições Eficazes",
+      "descricao": "Violência, corrupção e injustiça impedem qualquer país de avançar. Apostar nessa ODS é fortalecer direitos humanos, transparência e segurança para todos.",
+      "descricaoCompleta": "Violência, corrupção e injustiça impedem qualquer país de avançar. Apostar nessa ODS é fortalecer direitos humanos, transparência e segurança para todos. Sociedades justas jogam melhor — juntas.",
+      "cor": "#00689D",
+      "icone": "https://brasil.un.org/profiles/undg_country/themes/custom/undg/images/SDGs/pt-br/SDG-16.svg",
+      "link": "https://brasil.un.org/pt-br/sdgs/16",
+      "instituicoes": [
+        {"nome": "Transparência Internacional", "link": "https://transparenciainternacional.org.br"},
+        {"nome": "Instituto Sou da Paz", "link": "https://soudapaz.org"},
+        {"nome": "Conectas Direitos Humanos", "link": "https://www.conectas.org"}
+      ],
+      "impacto": {
+        "50": "Orientação jurídica para 10 pessoas",
+        "100": "Workshop de direitos humanos para 30 jovens",
+        "500": "Campanha de transparência em 1 município"
+      }
+    },
+    {
+      "id": 17,
+      "nome": "Parcerias e Meios de Implementação",
+      "descricao": "Nenhum país, empresa ou pessoa resolve tudo sozinho. Apoiar essa ODS significa impulsionar alianças, tecnologia, cooperação e investimento social.",
+      "descricaoCompleta": "Nenhum país, empresa ou pessoa resolve tudo sozinho. Apoiar essa ODS significa impulsionar alianças, tecnologia, cooperação e investimento social. Grandes mudanças acontecem quando todo mundo joga no mesmo time.",
+      "cor": "#19486A",
+      "icone": "https://brasil.un.org/profiles/undg_country/themes/custom/undg/images/SDGs/pt-br/SDG-17.svg",
+      "link": "https://brasil.un.org/pt-br/sdgs/17",
+      "instituicoes": [
+        {"nome": "Movimento Nós", "link": "https://www.movimentonos.org.br"},
+        {"nome": "Instituto Ethos", "link": "https://www.ethos.org.br"},
+        {"nome": "GIFE - Grupo de Institutos", "link": "https://gife.org.br"}
+      ],
+      "impacto": {
+        "50": "Conexão entre 5 projetos sociais e empresas",
+        "100": "Evento de networking para 20 ONGs",
+        "500": "Plataforma digital para 10 organizações"
+      }
+    }
+  ]
+}
