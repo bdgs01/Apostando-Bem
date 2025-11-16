@@ -3,13 +3,12 @@
 const Ranking = {
     currentTab: 'geral',
 
-    // Initialize
     init() {
+        console.log('🏆 Ranking.init() chamado');
         this.setupTabs();
         this.loadRanking('geral');
     },
 
-    // Setup tabs
     setupTabs() {
         const tabs = document.querySelectorAll('.tab-button');
         tabs.forEach(tab => {
@@ -23,10 +22,14 @@ const Ranking = {
         });
     },
 
-    // Load ranking based on tab
     loadRanking(tabName) {
         this.currentTab = tabName;
         const content = document.getElementById('rankingContent');
+        
+        if (!content) {
+            console.error('❌ rankingContent não encontrado');
+            return;
+        }
         
         switch(tabName) {
             case 'geral':
@@ -44,7 +47,6 @@ const Ranking = {
         }
     },
 
-    // Create general ranking
     createGeneralRanking() {
         const ranking = Storage.getRanking();
         
@@ -74,7 +76,6 @@ const Ranking = {
         `;
     },
 
-    // Create weekly ranking
     createWeeklyRanking() {
         const ranking = Storage.getRanking().map(user => ({
             ...user,
@@ -105,7 +106,6 @@ const Ranking = {
         `;
     },
 
-    // Create ODS ranking
     createODSRanking() {
         const odsStats = [
             { id: 1, nome: 'Erradicação da Pobreza', apostas: 234, cor: '#E5243B' },
@@ -144,7 +144,6 @@ const Ranking = {
         `;
     },
 
-    // Create impact ranking
     createImpactRanking() {
         const ranking = Storage.getRanking().sort((a, b) => b.impact - a.impact);
         
@@ -172,3 +171,5 @@ const Ranking = {
         `;
     }
 };
+
+console.log('✅ ranking.js carregado');
