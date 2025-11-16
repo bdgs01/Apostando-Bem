@@ -1,34 +1,54 @@
-// app.js - Main application controller - CORRIGIDO
+// app.js - Main application controller - ORDEM DE CARREGAMENTO CORRIGIDA
 
 const App = {
+    isInitialized: false,
+
     // Initialize app
     async init() {
+        // Prevent double initialization
+        if (this.isInitialized) {
+            console.log('⚠️ App já foi inicializado');
+            return;
+        }
+
         console.log('🚀 Apostando Bem - Iniciando...');
         
-        // Load ODS data first
-        await Betting.init();
-        
-        // Load games
-        Games.loadGames();
-        
-        // Initialize ranking
-        Ranking.init();
-        
-        // Update user info in header
-        this.updateUserInfo();
-        
-        // Setup menu toggle
-        this.setupMenuToggle();
-        
-        // Setup smooth scroll
-        this.setupSmoothScroll();
-        
-        // Setup modal close on ESC
-        this.setupEscapeKey();
-        
-        console.log('✅ Apostando Bem - Pronto!');
-        console.log('📊 XP Atual:', Storage.getXP());
-        console.log('🏆 Nível Atual:', Storage.getLevel());
+        try {
+            // 1. Load ODS data first (async)
+            console.log('📦 Carregando dados das ODS...');
+            await Betting.init();
+            console.log('✅ ODS carregadas');
+            
+            // 2. Load games (requires DOM)
+            console.log('⚽ Carregando jogos...');
+            Games.loadGames();
+            console.log('✅ Jogos carregados');
+            
+            // 3. Initialize ranking
+            console.log('🏆 Inicializando ranking...');
+            Ranking.init();
+            console.log('✅ Ranking inicializado');
+            
+            // 4. Update user info in header
+            this.updateUserInfo();
+            
+            // 5. Setup menu toggle
+            this.setupMenuToggle();
+            
+            // 6. Setup smooth scroll
+            this.setupSmoothScroll();
+            
+            // 7. Setup modal close on ESC
+            this.setupEscapeKey();
+            
+            this.isInitialized = true;
+            console.log('✅ Apostando Bem - Pronto!');
+            console.log('📊 XP Atual:', Storage.getXP());
+            console.log('🏆 Nível Atual:', Storage.getLevel());
+            
+        } catch (error) {
+            console.error('❌ Erro ao inicializar app:', error);
+        }
     },
 
     // Update user info in header
@@ -39,13 +59,11 @@ const App = {
         if (xpElement) {
             const xp = Storage.getXP();
             xpElement.textContent = xp;
-            console.log('✅ XP atualizado no header:', xp);
         }
         
         if (levelElement) {
             const level = Storage.getLevel();
             levelElement.textContent = level;
-            console.log('✅ Nível atualizado no header:', level);
         }
         
         // Update ranking
@@ -108,7 +126,7 @@ const App = {
         });
     },
 
-    // Show notification (opcional - para feedback visual)
+    // Show notification
     showNotification(message, type = 'success') {
         const notification = document.createElement('div');
         notification.className = `notification notification-${type}`;
@@ -124,6 +142,7 @@ const App = {
             font-weight: 700;
             z-index: 9999;
             animation: slideIn 0.3s ease;
+            box-shadow: var(--shadow-lg);
         `;
         
         document.body.appendChild(notification);
@@ -143,10 +162,18 @@ function scrollToGames() {
     }
 }
 
-// Initialize app when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
+// Initialize app when DOM is COMPLETELY loaded
+if (document.readyState === 'loading') {
+    // DOM still loading
+    document.addEventListener('DOMContentLoaded', () => {
+        console.log('📄 DOM loaded');
+        App.init();
+    });
+} else {
+    // DOM already loaded
+    console.log('📄 DOM já estava carregado');
     App.init();
-});
+}
 
 // Add CSS for notifications
 const style = document.createElement('style');
