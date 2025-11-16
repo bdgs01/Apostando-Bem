@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apostando Bem - A aposta que transforma</title>
-    <meta name="description" content="Transforme cada jogo em impacto real. Aposte em causas sociais, não em times.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -153,7 +152,27 @@
         </div>
     </div>
 
-    <!-- Scripts -->
+    <!-- TESTE DE DIAGNÓSTICO -->
+    <script>
+        console.log('🚀 Iniciando testes...');
+        
+        function scrollToGames() {
+            const gamesSection = document.getElementById('jogos');
+            if (gamesSection) {
+                gamesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+        
+        window.addEventListener('DOMContentLoaded', function() {
+            console.log('✅ DOM carregado');
+            console.log('📍 Verificando elementos...');
+            console.log('  - gamesGrid:', !!document.getElementById('gamesGrid'));
+            console.log('  - rankingContent:', !!document.getElementById('rankingContent'));
+            console.log('  - mainNav:', !!document.getElementById('mainNav'));
+        });
+    </script>
+
+    <!-- Scripts principais -->
     <script src="js/storage.js"></script>
     <script src="js/games.js"></script>
     <script src="js/betting.js"></script>
